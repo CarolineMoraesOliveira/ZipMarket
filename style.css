@@ -1,0 +1,146 @@
+/* login page */
+
+@charset "ISO-8859-1";
+
+.image1{
+    width: 600px;
+}
+
+
+#container2
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+#container2 button
+{
+	position: relative;
+	width: 150px;
+	height: 55px;
+	display: inline-block;
+	background: #fff;
+	margin: 20px;
+}
+#container2 button:before,
+#container2 button:after 
+{
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: #f00;
+	transition: 0.5s;
+}
+
+#container2 button:nth-child(1):before,
+#container2 button:nth-child(1):after 
+{
+	background: linear-gradient(45deg,#00ccff,#0e1538,#0e1538,#d400d4);
+}
+#container2 button:nth-child(2):before,
+#container2 button:nth-child(2):after 
+{
+	background: linear-gradient(45deg,#ff075b,#0e1538,#0e1538,#1aff22);
+}
+
+#container2 a:hover:before 
+{
+	inset: -3px;
+}
+#container2 button:hover:after 
+{
+	inset: -3px;
+	filter: blur(10px);
+}
+#container2 button span 
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	background: #0e1538;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #fff;
+	border: 1px solid #040a29;
+	overflow: hidden;
+}
+#container2 button span::before 
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -50%;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,0.075);
+	transform: skew(25deg);
+}
+
+
+/* landing page */
+
+
+#body
+{
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #0c192c;
+}
+.container 
+{
+
+	position: relative;
+	width: 900px;
+	height: 100vh;
+	overflow: hidden;
+}
+.bubbles 
+{
+	position: relative;
+	display: flex;
+}
+.bubbles span 
+{
+	position: relative;
+	min-width: 30px;
+	height: 30px;
+	background: #4fc3dc;
+	box-shadow: 0 0 0 10px #4fc3dc44,
+	0 0 50px #4fc3dc,
+	0 0 100px #4fc3dc;
+	margin: 0 4px;
+	border-radius: 50%;
+	animation: animate 15s linear infinite;
+	animation-duration: calc(130s / var(--i));
+}
+.bubbles span:nth-child(even) 
+{
+	background: #ff2d75;
+	box-shadow: 0 0 0 10px #ff2d7544,
+	0 0 50px #ff2d75,
+	0 0 100px #ff2d75;
+}
+@keyframes animate 
+{
+	0% 
+	{
+		transform: translateY(100vh) scale(0);
+	}
+	100% 
+	{
+		transform: translateY(-10vh) scale(1);
+	}
+}
