@@ -37,7 +37,7 @@ import jakarta.validation.constraints.Size;
 	    @Size(min=6, max=128, message="Password must be between 6 and 128 characters")
 	    private String password;
 	    
-	    @Pattern(regexp = "\\d{5}-\\d{3}", message = "ZipCode Format is invalid")
+	    @Pattern(regexp = "\\d{5}", message = "ZipCode Format is invalid")
 	    private String zipCode;
 	    
 	    @Transient
@@ -56,7 +56,7 @@ import jakarta.validation.constraints.Size;
 				@NotBlank(message = "First name is required!") @Size(min = 3, max = 50, message = "First name and last name must be between 3 and 30 characters") String name,
 				@NotBlank(message = "Email is required!") @Email(message = "Please enter a valid email!") String email,
 				@NotBlank(message = "Password is required!") @Size(min = 6, max = 128, message = "Password must be between 6 and 128 characters") String password,
-				@Pattern(regexp = "\\d{5}-\\d{3}", message = "ZipCode Format is invalid") String zipCode,
+				@Pattern(regexp = "\\d{5}", message = "ZipCode Format is invalid") String zipCode,
 				@NotBlank(message = "Confirm Password is required!") @Size(min = 6, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm) {
 			
 			this.id = id;
