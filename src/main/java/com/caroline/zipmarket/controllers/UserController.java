@@ -15,6 +15,8 @@ import com.caroline.zipmarket.services.UserService;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
+
+//I dont like JAVA
 @Controller
 public class UserController {
 
