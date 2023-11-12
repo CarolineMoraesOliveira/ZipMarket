@@ -7,9 +7,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Dashboard</title>
 </head>
 <body>
-vdvsdv
+Welcome to the ZipMarket @<c:out value="${newUser.userName}">!</c:out>
+
+<form action="/create_donation" method="get">
+   	<button type="submit" value="submit">+</button>
+</form>
+			
 </body>
 </html>
