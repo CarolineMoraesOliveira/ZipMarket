@@ -86,7 +86,6 @@ public class UserController {
 	            return "login.jsp"; 
 	        }
 	        else {
-	        
 	        	session.setAttribute("userId", user.getId()); 
 	    
 	        return "dashboard.jsp";

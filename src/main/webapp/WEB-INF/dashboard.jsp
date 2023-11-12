@@ -10,7 +10,7 @@
 <title>Dashboard</title>
 </head>
 <body>
-Welcome to the ZipMarket @<c:out value="${newUser.userName}">!</c:out>
+Welcome to the ZipMarket @<c:out value="${user.userName}">!</c:out>
 
 <form action="/create_donation" method="get">
    	<button type="submit" value="submit">+</button>
