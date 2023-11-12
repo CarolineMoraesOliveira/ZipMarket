@@ -101,25 +101,7 @@ public class UserController {
 	        }
 
 	 } 
-	 /*@GetMapping ("/welcome_company")
-	 	public String welcomePage (@ModelAttribute ("user") User user, Model model, 
-	 			HttpSession session) { 
-	 	
-		 if (session.getAttribute("userId") == null) {
-			 return "redirect:/";
-		 }
-		 else {
-			 
-		 Long userId = (Long) session.getAttribute("userId");    
-		 model.addAttribute("loggedUser", companyUserService.findById(userId));
-		 
-		 CompanyUser companyUser = companyUserService.findById(userId); 
-		 model.addAttribute("companyUser", companyUser);  
-		 
-		 List <User> allUsers = userService.findAll();
-		 model.addAttribute("users", allUsers);*/
-	 
-	 
+	
 	 
 }
 
