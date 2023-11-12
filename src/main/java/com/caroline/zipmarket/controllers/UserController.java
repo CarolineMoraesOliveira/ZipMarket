@@ -1,5 +1,8 @@
 package com.caroline.zipmarket.controllers;
 
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,6 +51,8 @@ public class UserController {
 	        else {
 	        
 	        	session.setAttribute("userId", newUser.getId()); 
+	        	model.addAttribute("newUser", newUser);
+	        	
 	    
 	        return "redirect:/dashboard";
 	        }
@@ -66,7 +71,9 @@ public class UserController {
 		 }
 	 	
 		 User user = userService.findById(userId);  
-		 model.addAttribute("user", user);
+		 model.addAttribute("newUser", user);
+		 List <User> allUsers = userService.findAll();
+		 model.addAttribute("users", allUsers); 
 		 	
 		 	return "dashboard.jsp";
 	 }
@@ -87,10 +94,30 @@ public class UserController {
 	        }
 	        else {
 	        	session.setAttribute("userId", user.getId()); 
+	        	model.addAttribute("newUser", user);
+	        
 	    
-	        return "dashboard.jsp";
+	        return "redirect:/dashboard";
 	        }
-	 }
+
+	 } 
+	 /*@GetMapping ("/welcome_company")
+	 	public String welcomePage (@ModelAttribute ("user") User user, Model model, 
+	 			HttpSession session) { 
+	 	
+		 if (session.getAttribute("userId") == null) {
+			 return "redirect:/";
+		 }
+		 else {
+			 
+		 Long userId = (Long) session.getAttribute("userId");    
+		 model.addAttribute("loggedUser", companyUserService.findById(userId));
+		 
+		 CompanyUser companyUser = companyUserService.findById(userId); 
+		 model.addAttribute("companyUser", companyUser);  
+		 
+		 List <User> allUsers = userService.findAll();
+		 model.addAttribute("users", allUsers);*/
 	 
 	 
 	 

@@ -1,5 +1,7 @@
 package com.caroline.zipmarket.services;
 
+import java.util.List;
+
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -83,4 +85,9 @@ public class UserService {
     	}
     	
     }
+
+	public List<User> findAll() {
+		
+		return userRepository.findAll();
+	}
 }
