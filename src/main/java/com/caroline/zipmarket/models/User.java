@@ -1,10 +1,12 @@
 package com.caroline.zipmarket.models;
 
+import java.util.List;
 import jakarta.persistence.Entity;
-
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import jakarta.validation.constraints.Email;
@@ -44,6 +46,11 @@ import jakarta.validation.constraints.Size;
 	    @NotBlank(message="Confirm Password is required!")
 	    @Size(min=6, max=128, message="Confirm Password must be between 8 and 128 characters")
 	    private String confirm;
+	    
+	    // RELATIONSHIP
+	    
+	    @OneToMany(mappedBy="personWhoIsGoingToDonate", fetch=FetchType.LAZY)
+	    private List<ThingToBeDonated> personWhoIsGoingToDonate;
 
 	    // Constructors
 	    
@@ -57,8 +64,9 @@ import jakarta.validation.constraints.Size;
 				@NotBlank(message = "Email is required!") @Email(message = "Please enter a valid email!") String email,
 				@NotBlank(message = "Password is required!") @Size(min = 6, max = 128, message = "Password must be between 6 and 128 characters") String password,
 				@Pattern(regexp = "\\d{5}", message = "ZipCode Format is invalid") String zipCode,
-				@NotBlank(message = "Confirm Password is required!") @Size(min = 6, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm) {
-			
+				@NotBlank(message = "Confirm Password is required!") @Size(min = 6, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm,
+				List<ThingToBeDonated> personWhoIsGoingToDonate) {
+		
 			this.id = id;
 			this.userName = userName;
 			this.name = name;
@@ -66,6 +74,7 @@ import jakarta.validation.constraints.Size;
 			this.password = password;
 			this.zipCode = zipCode;
 			this.confirm = confirm;
+			this.personWhoIsGoingToDonate = personWhoIsGoingToDonate;
 		}
 
 		public Long getId() {
@@ -123,5 +132,14 @@ import jakarta.validation.constraints.Size;
 		public void setConfirm(String confirm) {
 			this.confirm = confirm;
 		}
-	    
+
+		public List<ThingToBeDonated> getPersonWhoIsGoingToDonate() {
+			return personWhoIsGoingToDonate;
+		}
+
+		public void setPersonWhoIsGoingToDonate(List<ThingToBeDonated> personWhoIsGoingToDonate) {
+			this.personWhoIsGoingToDonate = personWhoIsGoingToDonate;
+		}
+
+		
 	}

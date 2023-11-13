@@ -1,5 +1,8 @@
 package com.caroline.zipmarket.controllers;
 
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,6 +51,8 @@ public class UserController {
 	        else {
 	        
 	        	session.setAttribute("userId", newUser.getId()); 
+	        	model.addAttribute("newUser", newUser);
+	        	
 	    
 	        return "redirect:/dashboard";
 	        }
@@ -66,7 +71,9 @@ public class UserController {
 		 }
 	 	
 		 User user = userService.findById(userId);  
-		 model.addAttribute("user", user);
+		 model.addAttribute("newUser", user);
+		 List <User> allUsers = userService.findAll();
+		 model.addAttribute("users", allUsers); 
 		 	
 		 	return "dashboard.jsp";
 	 }
@@ -86,14 +93,15 @@ public class UserController {
 	            return "login.jsp"; 
 	        }
 	        else {
-	        
 	        	session.setAttribute("userId", user.getId()); 
+	        	model.addAttribute("newUser", user);
+	        
 	    
-	        return "dashboard.jsp";
+	        return "redirect:/dashboard";
 	        }
-	 }
-	 
-	 
+
+	 } 
+	
 	 
 }
 
