@@ -19,12 +19,22 @@ import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 
-//I dont like JAVA
+
 @Controller
 public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	
+//	LANDING PAGE WHERE EVERYTHING STARTS!!!
+	
+	@GetMapping("/zipmarket")
+	public String landingpage() {
+		return "landpage.jsp";
+	}
+	
+	
 	
 	 // ROUTE TO THE LOGIN PAGE
 	
