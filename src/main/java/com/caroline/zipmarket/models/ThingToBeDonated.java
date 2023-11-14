@@ -1,5 +1,8 @@
 package com.caroline.zipmarket.models;
 
+import java.sql.Blob;
+import java.sql.SQLException;
+import java.util.Base64;
 import java.util.Date;
 
 import jakarta.persistence.CascadeType;
@@ -135,6 +138,31 @@ public class ThingToBeDonated {
 		this.personWhoIsGoingToDonate = personWhoIsGoingToDonate;
 	}
 
-	
+	 public String getBase64Image() {
+	        if (articleImage != null) {
+	        	 try {
+	                 Blob blob = new javax.sql.rowset.serial.SerialBlob(articleImage);
+	                 byte[] bytes = blob.getBytes(1, (int) blob.length());
+	                 String base64Image = Base64.getEncoder().encodeToString(bytes);
+	                 System.out.println("Base64 Image: " + base64Image);
+	                 return base64Image;
+	             } catch (SQLException e) {
+	                 e.printStackTrace();
+	             }
+	        }
+	        return null; 
+	    }
+
+
+
+	public void setBase64Image(String base64Image) {
+		 if (base64Image != null && !base64Image.isEmpty()) {
+		       
+		        this.articleImage = Base64.getDecoder().decode(base64Image);
+		    } else {
+		        this.articleImage = null;
+		    }
+		
+	}
 	
 }

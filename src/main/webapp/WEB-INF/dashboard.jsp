@@ -3,6 +3,8 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isErrorPage="true" %>
+<%@ page import="java.util.Base64" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +15,7 @@
 <body>
 Welcome to the ZipMarket @<c:out value="${newUser.userName}">!</c:out>
 
-<a class="btn btn-primary" href="#" role="button">+</a>
+<a class="btn btn-primary" href="/donate" role="button">Create your donation +</a>
 Create a donation
 <a href="/">Log out</a>
 Select a ZipCode:
@@ -28,5 +30,12 @@ Select a ZipCode:
 	</form:select>
 </form:form>
 			
+	<div> <h1>Post test</h1>
+		<c:forEach var="creator" items="${item }" >
+	<c:out value="${ creator.description}"></c:out>
+  <c:out value="${creator.getBase64Image()}"></c:out> 
+	   <img src="data:image/jpeg;base64,${creator.getBase64Image()}" alt="Article Image">
+	</c:forEach>
+	</div>
 </body>
 </html>
