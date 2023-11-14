@@ -24,38 +24,38 @@
         <img  class="image1" src="/images/logo.png" alt="duke">
         <div class="row">
             <div class="col">
-                <h2 class="display-5">Register</h2>
+                <h2 class="display-5 text-white">Register</h2>
                 <div class="bodyb">
-                    <div class="card shadow">
+                    <div class="card shadow" style="background-color: rgb(19, 16, 16);">
                         <div class="card-body">
                             <form:form action="/register" method="POST" modelAttribute="newUser" >
                                 <div class="mb-3">
-                                    <form:label path="name" class="form-label">First Name</form:label>
+                                    <form:label path="name" class="form-label text-white" >First Name</form:label>
                                     <form:input path="name" class="form-control"/>
                                     <form:errors path="name" class="form-text text-warning"/>
                                 </div>
                                 <div class="mb-3">
-                                    <form:label path="userName" class="form-label">User Name</form:label>
+                                    <form:label path="userName" class="form-label text-white">User Name</form:label>
                                     <form:input path="userName" class="form-control"/>
                                     <form:errors path="userName" class="form-text text-warning"/>
                                 </div>
                                 <div class="mb-3">
-                                    <form:label path="zipCode" class="form-label">Zip Code</form:label>
+                                    <form:label path="zipCode" class="form-label text-white">Zip Code</form:label>
                                     <form:input path="zipCode" class="form-control" type="number"/>
                                     <form:errors path="zipCode" class="form-text text-warning"/>
                                 </div>
                                 <div class="mb-3">
-                                    <form:label path="email" class="form-label">Email</form:label>
+                                    <form:label path="email" class="form-label text-white">Email</form:label>
                                     <form:input path="email" class="form-control"/>
                                     <form:errors path="email" class="form-text text-warning"/>
                                 </div>
                                 <div class="mb-3">
-                                    <form:label path="password" class="form-label">Password</form:label>
+                                    <form:label path="password" class="form-label text-white">Password</form:label>
                                     <form:input path="password" class="form-control" type="password"/>
                                     <form:errors path="password" class="form-text text-warning"/>
                                 </div>
                                 <div class="mb-3">
-                                    <form:label path="confirm" class="form-label">Confirm Password</form:label>
+                                    <form:label path="confirm" class="form-label text-white">Confirm Password</form:label>
                                     <form:input path="confirm" class="form-control" type="password"/>
                                     <form:errors path="confirm" class="form-text text-warning"/>
                                 </div>
@@ -68,17 +68,17 @@
                 </div>
             </div>
             <div class="col">
-                <h2 class="display-5">Login</h2>
-                <div class="card shadow">
+                <h2 class="display-5 text-white ">Login</h2>
+                <div class="card shadow" style="background-color: rgb(19, 16, 16);">
                     <div class="card-body">
                         <form:form action="/login" method="POST" modelAttribute="newLogin">
                             <div class="mb-3">
-                                <form:label path="email" class="form-label">Email</form:label>
+                                <form:label path="email" class="form-label text-white">Email</form:label>
                                 <form:input path="email" class="form-control"/>
                                 <form:errors path="email" class="form-text text-warning"/>
                             </div>
                             <div class="mb-3">
-                                <form:label path="password" class="form-label">Password</form:label>
+                                <form:label path="password" class="form-label text-white">Password</form:label>
                                 <form:input path="password" class="form-control" type="password"/>
                                 <form:errors path="password" class="form-text text-warning"/>
                             </div>
