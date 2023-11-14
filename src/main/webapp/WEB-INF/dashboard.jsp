@@ -94,7 +94,7 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 				</div>
 				<div class="content">
 					<div>
-						<a href="#"><h2>CHICA COOL</h2></a>
+						<a href="#">CHICA COOL</a>
 					</div>
 				</div>
 			</div>
