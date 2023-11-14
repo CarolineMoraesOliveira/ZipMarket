@@ -146,3 +146,274 @@
 		transform: translateY(-10vh) scale(1);
 	}
 }
+
+
+
+
+
+
+
+/* create your donation */
+
+
+
+
+
+
+
+/* DROPDOWNLIST */
+
+
+
+
+
+
+
+
+/* PICTURES */
+*
+{
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+    /* font-family: 'Montserrat', sans-serif; */
+}
+.bodypicture
+{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.containerpicture
+{
+    position: relative;
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+.containerpicture .box
+{
+    position: relative;
+    width: 275px;
+    height: 275px;
+    background: #ccc;
+    overflow: hidden;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+}
+.containerpicture:hover .box
+{
+    transform: rotateY(25deg);
+}
+.containerpicture .box:hover ~ .box
+{
+    transform: rotateY(-25deg);
+}
+.containerpicture .box:hover
+{
+    transform: scale(1.25) rotateY(0deg);
+    z-index: 1;
+    box-shadow: 0 25px 40px rgba(0,0,0,.5);
+}
+.containerpicture .box .imgBx
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.containerpicture .box .imgBx:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,#f00,#000);
+    z-index: 1;
+    mix-blend-mode: multiply;
+    opacity: 0;
+    transition: 0.5s;
+}
+.containerpicture .box:hover .imgBx:before
+{
+    opacity: 1;
+}
+.containerpicture .box .imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.containerpicture .box .content
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    padding: 20px;
+    align-items: flex-end;
+}
+.containerpicture .box .content h2
+{
+    color: #fff;
+    transform: translateY(200px);
+    transition: 0.5s;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.containerpicture .box .content p
+{
+    color: #fff;
+    transform: translateY(200px);
+    transition: 0.5s;
+    font-size: 14px;
+}
+.containerpicture .box:hover .content h2
+{
+    transform: translateY(0);
+    transition-delay: 0.6s;
+}
+.containerpicture .box:hover .content p
+{
+    transform: translateY(0);
+    transition-delay: 0.7s;
+}
+
+
+
+
+
+/* create */
+/* *
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Nunito', sans-serif;
+} */
+.bodycreate
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #000;
+	overflow: hidden;
+}
+.boxcreate
+{
+	position: relative;
+	width: 600px;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.boxcreate h2
+{
+	color: #fff;
+	font-size: 5em;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-shadow: 0 0 10px #00b3ff,
+							0 0 20px #00b3ff,
+							0 0 40px #00b3ff,
+							0 0 80px #00b3ff,
+							0 0 120px #00b3ff;
+}
+.lightbar
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 100%;
+	border-radius: 10px;
+	background: #fff;
+	z-index: 2;
+	box-shadow: 0 0 10px #00b3ff,
+							0 0 20px #00b3ff,
+							0 0 40px #00b3ff,
+							0 0 80px #00b3ff,
+							0 0 120px #00b3ff;
+	animation: animatelightbar 5s linear infinite;
+}
+@keyframes animatelightbar
+{
+	0%,5%
+	{
+		transform: scaleY(0) translateX(0);
+	}
+	10%
+	{
+		transform: scaleY(1) translateX(0);
+	}
+	90%
+	{
+		transform: scaleY(1) translateX(calc(600px - 10px));
+	}
+	95%,100%
+	{
+		transform: scaleY(0) translateX(calc(600px - 10px));
+	}
+}
+.topLayer
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	animation: animatetopLayer 10s linear infinite;
+}
+@keyframes animatetopLayer
+{
+	0%,2.5%
+	{
+		transform: translateX(0);
+	}
+	5%
+	{
+		transform: translateX(0);
+	}
+	45%
+	{
+		transform: translateX(100%);
+	}
+	47.5%,50%
+	{
+		transform: translateX(100%);
+	}
+
+	50.001%,52.5%
+	{
+		transform: translateX(-100%);
+	}
+	55%
+	{
+		transform: translateX(-100%);
+	}
+	95%
+	{
+		transform: translateX(0%);
+	}
+	97.5%,100%
+	{
+		transform: translateX(0%);
+	}
+}
