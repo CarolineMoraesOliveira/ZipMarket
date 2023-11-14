@@ -7,6 +7,8 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!-- for rendering errors on PUT routes -->
 <%@ page isErrorPage="true" %>
+<%@ page import="java.util.Base64" %>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 <head>
@@ -34,7 +36,7 @@
 background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 color: #fff;
-border: 3px solid #eee;"  href="#" role="button">Create Your Donation</a>
+border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 </div>
 <br>
 <div style="margin-left: 20px;">
@@ -49,8 +51,18 @@ border: 3px solid #eee;"  href="#" role="button">Create Your Donation</a>
 		</form:select>
 	</form:form>
 </div>
-<body>
-	<div class="bodypicture" style="padding-top: 1;">
+<div> 
+  <h1>Post test</h1>
+		<c:forEach var="creator" items="${item }" >
+	<c:out value="${ creator.description}"></c:out>
+  <c:out value="${creator.getBase64Image()}"></c:out> 
+	   <img src="data:image/jpeg;base64,${creator.getBase64Image()}" alt="Article Image">
+	</c:forEach>
+	</div>
+
+	
+  
+  <div class="bodypicture" style="padding-top: 1;">
 		<div class="containerpicture">
 			<div class="box">
 				<div class="imgBx">
@@ -100,9 +112,6 @@ border: 3px solid #eee;"  href="#" role="button">Create Your Donation</a>
 			</div>
 		</div>
 	</div>
-</body>
-
-
 </body>
 </html>
 
