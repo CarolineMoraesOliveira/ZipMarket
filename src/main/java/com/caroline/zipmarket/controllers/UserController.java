@@ -1,6 +1,7 @@
 package com.caroline.zipmarket.controllers;
 
 
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.caroline.zipmarket.models.LoginUser;
+import com.caroline.zipmarket.models.ThingToBeDonated;
 import com.caroline.zipmarket.models.User;
+import com.caroline.zipmarket.services.ThingToBeDonatedService;
 import com.caroline.zipmarket.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
@@ -25,6 +28,9 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private ThingToBeDonatedService thingToBeDonatedService;
 	
 	
 //	LANDING PAGE WHERE EVERYTHING STARTS!!!
@@ -85,6 +91,18 @@ public class UserController {
 		 List <User> allUsers = userService.findAll();
 		 model.addAttribute("users", allUsers); 
 		 	
+		 //render the items info
+//		 List<ThingToBeDonated> item = thingToBeDonatedService.allDonations();
+//		 for (ThingToBeDonated thing : item) {   
+//			    String base64Image = Base64.getEncoder().encodeToString(thing.getArticleImage());
+//			    thing.setBase64Image(base64Image); 
+//			}
+		 List<ThingToBeDonated> item = thingToBeDonatedService.allDonations();
+
+		    for (ThingToBeDonated items : item) {
+		        items.getBase64Image(); // Assuming you have a method like getBase64Image() in your ThingToBeDonated class
+		    }
+				 model.addAttribute("item", item);
 		 	return "dashboard.jsp";
 	 }
 	 
