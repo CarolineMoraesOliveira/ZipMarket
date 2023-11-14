@@ -13,6 +13,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
@@ -37,6 +38,7 @@ public class ThingToBeDonated {
     @Size(min=1, max=255, message="The description must have between 1 and 255 characters")
     private String description;
     
+    @Lob
     @Column (nullable = false, columnDefinition = "MediumBlob")
     private byte[] articleImage;
     
@@ -138,7 +140,7 @@ public class ThingToBeDonated {
 		this.personWhoIsGoingToDonate = personWhoIsGoingToDonate;
 	}
 
-	 public String getBase64Image() {
+  public String getBase64Image() {
 	        if (articleImage != null) {
 	        	 try {
 	                 Blob blob = new javax.sql.rowset.serial.SerialBlob(articleImage);
@@ -164,5 +166,6 @@ public class ThingToBeDonated {
 		    }
 		
 	}
-	
+}
+
 }
