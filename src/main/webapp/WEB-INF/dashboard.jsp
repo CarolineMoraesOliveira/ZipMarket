@@ -51,17 +51,14 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 		</form:select>
 	</form:form>
 </div>
-<div> 
+<!-- <div> 
   <h1>Post test</h1>
 		<c:forEach var="creator" items="${item }" >
 	<c:out value="${ creator.description}"></c:out>
   <c:out value="${creator.getBase64Image()}"></c:out> 
 	   <img src="data:image/jpeg;base64,${creator.getBase64Image()}" alt="Article Image">
 	</c:forEach>
-	</div>
-
-	
-  
+	</div> -->
   <div class="bodypicture" style="padding-top: 1;">
 		<div class="containerpicture">
 			<div class="box">
