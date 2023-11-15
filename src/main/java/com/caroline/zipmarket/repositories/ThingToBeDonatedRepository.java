@@ -15,12 +15,11 @@ public interface ThingToBeDonatedRepository extends CrudRepository<ThingToBeDona
 	
 	Optional<ThingToBeDonated> findById(long id);
 	
-<<<<<<< HEAD
+
 //	ThingToBeDonated save(ThingToBeDonated item);
 	<S extends ThingToBeDonated> S save(S thingToBeDonate);
 	
-=======
-	<S extends ThingToBeDonated> S save(S thingToBeDonate);
->>>>>>> f2df6336e591af5d38a10d753bceddecfdbf581a
+
+
 
 }

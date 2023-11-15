@@ -59,7 +59,7 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 	<a href="/view/${creator.id}"><c:out value="${ creator.articleName}"></c:out></a>
 	</c:forEach>
 	</div>
-s
+
 	
   
   <div class="bodypicture" style="padding-top: 1;">
