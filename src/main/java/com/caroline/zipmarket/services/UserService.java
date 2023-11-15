@@ -90,4 +90,11 @@ public class UserService {
 		
 		return userRepository.findAll();
 	}
+
+
+	public List<User> findAllByZipCode(String zipCode) {
+		return userRepository.findAllByZipCode(zipCode);
+		
+		
+	}
 }
