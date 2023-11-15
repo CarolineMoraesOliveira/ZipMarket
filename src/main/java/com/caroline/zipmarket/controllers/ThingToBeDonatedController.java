@@ -3,6 +3,7 @@ package com.caroline.zipmarket.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -27,6 +28,22 @@ public class ThingToBeDonatedController {
 	@Autowired
 	ThingToBeDonatedService thingToBeDonatedService;
 	
+
+	//route that serves the template
+	@GetMapping("/donate")
+	public String Donate(@ModelAttribute("item")ThingToBeDonated thingToBeDonate) {
+		return "create_donation.jsp";
+	}
+
+	//route that sends the information to the DataBase
+	@PostMapping("/create/donation")
+	public String CreateDonation(@Valid @ModelAttribute("item")ThingToBeDonated thingToBeDonate,BindingResult result, HttpSession session) {
+		if(result.hasErrors()) {
+		return "create_donation.jsp";
+		}
+		thingToBeDonatedService.createDonation(thingToBeDonate);
+		return "redirect:/dashboard";
+
 	@Autowired
 	private UserService userService;
 	
@@ -47,8 +64,9 @@ public String CreateDonation(@Valid @ModelAttribute("item")ThingToBeDonated thin
 	thingToBeDonate.setPersonWhoIsGoingToDonate(user);
 	thingToBeDonatedService.createDonation(thingToBeDonate);
 	return "redirect:/dashboard";
+
 	
-}
+		}
 
 //serves the view template
 @GetMapping("/view/{donationId}")
@@ -90,7 +108,6 @@ public String delete(@PathVariable("id")Long id) {
 }
 
 //view user details
-//Carolina
 @GetMapping("/view/user/{id}")
 public String view_user_details(Model model, @PathVariable("id")Long id) { 
  	

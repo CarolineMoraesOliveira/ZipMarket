@@ -1,8 +1,5 @@
 package com.caroline.zipmarket.controllers;
-<<<<<<< HEAD
-=======
 
->>>>>>> 1fbf8d453276e2377ed0e9ba075de9413777a137
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
