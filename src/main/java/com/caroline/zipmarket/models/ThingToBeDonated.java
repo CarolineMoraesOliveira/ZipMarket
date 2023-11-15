@@ -4,6 +4,7 @@ import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.Base64;
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -63,6 +64,7 @@ public class ThingToBeDonated {
     @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name="user_id")
     private User personWhoIsGoingToDonate;
+   
 
     // CONSTRUCTORS
     
@@ -83,6 +85,7 @@ public class ThingToBeDonated {
 		this.updatedAt = updatedAt;
 		this.personWhoIsGoingToDonate = personWhoIsGoingToDonate;
 	}
+
 
 	public Long getId() {
 		return id;

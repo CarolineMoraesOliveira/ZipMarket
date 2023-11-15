@@ -27,7 +27,7 @@
         <h1 class="display-3 p-2  text-white ">Welcome to the ZipMarket "${newUser.userName}"</h1>
     </div>
     <div  id="container2" style="">
-        <a href="/logout"><button><span>Logout</span></button></a>
+        <a href="/Logout"><button><span>Logout</span></button></a>
     </div>
 </div>
 
@@ -51,15 +51,15 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 		</form:select>
 	</form:form>
 </div>
+
+
 <div> 
-  <h1>Post test</h1>
 		<c:forEach var="creator" items="${item }" >
-	<c:out value="${ creator.description}"></c:out>
-  <c:out value="${creator.getBase64Image()}"></c:out> 
-	   <img src="data:image/jpeg;base64,${creator.getBase64Image()}" alt="Article Image">
+	   <img src="data:image/jpeg;base64,${creator.getBase64Image()}" width="100" height="100">
+	<a href="/view/${creator.id}"><c:out value="${ creator.articleName}"></c:out></a>
 	</c:forEach>
 	</div>
-
+s
 	
   
   <div class="bodypicture" style="padding-top: 1;">

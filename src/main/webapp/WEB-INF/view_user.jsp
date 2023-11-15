@@ -7,9 +7,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>View User</title>
 </head>
 <body>
+<h1>Get in contact with the <c:out value="${ user.name}"></c:out></h1>
 
+<a href="/">Logout</a>
+<a href="/dashboard">Dashboard</a>
+
+
+	<p> name : <c:out value="${ user.name}"></c:out></p>
+	<p> UserName : <c:out value="${ user.userName}"></c:out></p>
+	<p> Email :<c:out value="${user.email}"></c:out></p>
+	
+	<!-- <a href="/view/${item.id}">get back to article details</a> could not get it to work--> 
+	
 </body>
 </html>
