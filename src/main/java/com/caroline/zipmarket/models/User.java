@@ -50,7 +50,7 @@ import jakarta.validation.constraints.Size;
 	    // RELATIONSHIP
 	    
 	    @OneToMany(mappedBy="personWhoIsGoingToDonate", fetch=FetchType.LAZY)
-	    private List<ThingToBeDonated> personWhoIsGoingToDonate;
+	    private List<ThingToBeDonated> thingToBeDonate;
 
 	    // Constructors
 	    
@@ -74,7 +74,7 @@ import jakarta.validation.constraints.Size;
 			this.password = password;
 			this.zipCode = zipCode;
 			this.confirm = confirm;
-			this.personWhoIsGoingToDonate = personWhoIsGoingToDonate;
+			this.thingToBeDonate = thingToBeDonate;
 		}
 
 		public Long getId() {
@@ -133,12 +133,21 @@ import jakarta.validation.constraints.Size;
 			this.confirm = confirm;
 		}
 
-		public List<ThingToBeDonated> getPersonWhoIsGoingToDonate() {
-			return personWhoIsGoingToDonate;
+//		public List<ThingToBeDonated> getPersonWhoIsGoingToDonate() {
+//			return personWhoIsGoingToDonate;
+//		}
+//
+//		public void setPersonWhoIsGoingToDonate(List<ThingToBeDonated> personWhoIsGoingToDonate) {
+//			this.personWhoIsGoingToDonate = personWhoIsGoingToDonate;
+//		}
+		
+		public List<ThingToBeDonated> getThingToBeDonate() {
+			return thingToBeDonate;
 		}
 
-		public void setPersonWhoIsGoingToDonate(List<ThingToBeDonated> personWhoIsGoingToDonate) {
-			this.personWhoIsGoingToDonate = personWhoIsGoingToDonate;
+	
+		public void setThingToBeDonate(List<ThingToBeDonated> thingToBeDonate) {
+			this.thingToBeDonate = thingToBeDonate;
 		}
 
 		

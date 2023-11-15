@@ -1,7 +1,4 @@
 package com.caroline.zipmarket.controllers;
-
-
-import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,17 +87,11 @@ public class UserController {
 		 model.addAttribute("newUser", user);
 		 List <User> allUsers = userService.findAll();
 		 model.addAttribute("users", allUsers); 
-		 	
-		 //render the items info
-//		 List<ThingToBeDonated> item = thingToBeDonatedService.allDonations();
-//		 for (ThingToBeDonated thing : item) {   
-//			    String base64Image = Base64.getEncoder().encodeToString(thing.getArticleImage());
-//			    thing.setBase64Image(base64Image); 
-//			}
+
 		 List<ThingToBeDonated> item = thingToBeDonatedService.allDonations();
 
 		    for (ThingToBeDonated items : item) {
-		        items.getBase64Image(); // Assuming you have a method like getBase64Image() in your ThingToBeDonated class
+		        items.getBase64Image(); 
 		    }
 				 model.addAttribute("item", item);
 		 	return "dashboard.jsp";

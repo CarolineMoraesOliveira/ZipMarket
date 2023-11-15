@@ -22,7 +22,7 @@
 
 <div class="mb-3">
 <form:label path="description"> Description: </form:label>
-<form:input path="description" type="text"/>
+<form:textarea path="description" type="text"/>
 <form:errors path="description"  class="form-text text-danger"/>
 </div>
 
