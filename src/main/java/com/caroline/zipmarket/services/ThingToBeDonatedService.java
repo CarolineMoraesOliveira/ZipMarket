@@ -19,12 +19,7 @@ public class ThingToBeDonatedService {
 		return thingToBeDonatedRepository.findAll();
 	}
 	
-<<<<<<< HEAD
-//	public ThingToBeDonated createDonation(ThingToBeDonated item) {
-//		return thingToBeDonatedRepository.save(item);
-//	}
-=======
->>>>>>> f2df6336e591af5d38a10d753bceddecfdbf581a
+
 	public ThingToBeDonated createDonation(ThingToBeDonated thingToBeDonate) {
 		return thingToBeDonatedRepository.save(thingToBeDonate);
 	}

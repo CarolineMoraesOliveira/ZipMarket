@@ -58,7 +58,9 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 </form:form>
 </div>
 
+
   <div class="bodypicture" style="padding-top: 1;">
+
 		<div class="containerpicture">
 			<div class="box">
 				<div class="imgBx">
