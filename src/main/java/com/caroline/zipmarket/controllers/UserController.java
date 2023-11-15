@@ -89,16 +89,15 @@ public class UserController {
 		 model.addAttribute("newUser", user);
 		 List <User> allUsers = userService.findAll();
 		 model.addAttribute("users", allUsers); 
-		 	
-		 //render the items info
-//		 List<ThingToBeDonated> item = thingToBeDonatedService.allDonations();
-//		 for (ThingToBeDonated thing : item) {   
-//			    String base64Image = Base64.getEncoder().encodeToString(thing.getArticleImage());
-//			    thing.setBase64Image(base64Image); 
-//			}
-		
-				 
-				 
+
+
+		 List<ThingToBeDonated> item = thingToBeDonatedService.allDonations();
+
+		    for (ThingToBeDonated items : item) {
+		        items.getBase64Image(); 
+		    }
+				 model.addAttribute("item", item);
+
 		 	return "dashboard.jsp";
 	 }
 	 
@@ -124,9 +123,23 @@ public class UserController {
 	        return "redirect:/dashboard";
 	        }
 
+
 	 }
 	 
 	 // POS ROUTE TO UPDATE THE PAGE WITH THE IMAGES RELATED TO THE USER THAT LIVES ON THE SELECTED ZIPCODE
+
+	 } 
+	 
+	 
+	 
+//		LOGOUT JR
+		@GetMapping("/logout")
+		public String logout(HttpSession session) {
+			session.invalidate();
+			return "redirect:/";
+		}
+	
+
 	 
 	 @PostMapping ("/{zipCode}/show")
 	 	public String processFormSelectedZipCode (@Valid @ModelAttribute("newUser") User newUser, 
