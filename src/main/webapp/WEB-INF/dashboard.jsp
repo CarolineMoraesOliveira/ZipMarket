@@ -10,7 +10,7 @@
 <%@ page import="java.util.Base64" %>
 
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="dark" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +40,7 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 </div>
 <br>
 <div style="margin-left: 20px;">
-	<form:form method="post" action="/selected_zipcode" modelAttribute="newUser">
+	<form:form method="post" action="/${eachUser.zipCode}/show" modelAttribute="newUser">
 		<form:label path="zipCode" class="text-white ">ZipCode</form:label>
 		<form:select path="zipCode">
 			<c:forEach var="eachUser" items="${users}">
@@ -49,8 +49,15 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 				</form:option>
 			</c:forEach>
 		</form:select>
-	</form:form>
+    <h1>Related articles based on the ZipCode</h1>
+    <c:forEach var="creator" items="${usersByZipCode}" >
+        <p>Article Name: <c:out value="${creator.thingToBeDonate.articleName}"/></p>
+        <p>Article Image:</p>
+        <img src="data:image/jpeg;base64,${creator.thingToBeDonate.getBase64Image()}" alt="Article Image">
+    </c:forEach>
+</form:form>
 </div>
+
   <div class="bodypicture" style="padding-top: 1;">
 		<div class="containerpicture">
 			<div class="box">
