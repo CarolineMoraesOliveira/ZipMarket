@@ -63,6 +63,7 @@ public class ThingToBeDonated {
     @ManyToOne(fetch=FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name="user_id")
     private User personWhoIsGoingToDonate;
+   
 
     // CONSTRUCTORS
     
@@ -83,6 +84,7 @@ public class ThingToBeDonated {
 		this.updatedAt = updatedAt;
 		this.personWhoIsGoingToDonate = personWhoIsGoingToDonate;
 	}
+
 
 	public Long getId() {
 		return id;
@@ -166,5 +168,7 @@ public class ThingToBeDonated {
 		    }
 		
 	}
+
+
 }
 

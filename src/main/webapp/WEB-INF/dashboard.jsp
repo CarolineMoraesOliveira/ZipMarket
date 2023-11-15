@@ -27,7 +27,7 @@
         <h1 class="display-3 p-2  text-white ">Welcome to the ZipMarket "${newUser.userName}"</h1>
     </div>
     <div  id="container2" style="">
-        <a href="/logout"><button><span>Logout</span></button></a>
+        <a href="/Logout"><button><span>Logout</span></button></a>
     </div>
 </div>
 
@@ -57,8 +57,7 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
     </c:forEach>
 </form:form>
 </div>
-	  
-  <div class="bodypicture" style="padding-top: 1;">
+<div class="bodypicture" style="padding-top: 1;">
 		<div class="containerpicture">
 			<div class="box">
 				<div class="imgBx">

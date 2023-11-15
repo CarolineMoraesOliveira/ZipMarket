@@ -17,4 +17,5 @@ public interface ThingToBeDonatedRepository extends CrudRepository<ThingToBeDona
 	
 	<S extends ThingToBeDonated> S save(S thingToBeDonate);
 
+
 }
