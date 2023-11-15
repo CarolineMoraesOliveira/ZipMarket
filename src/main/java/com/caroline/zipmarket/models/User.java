@@ -65,8 +65,7 @@ import jakarta.validation.constraints.Size;
 				@NotBlank(message = "Password is required!") @Size(min = 6, max = 128, message = "Password must be between 6 and 128 characters") String password,
 				@Pattern(regexp = "\\d{5}", message = "ZipCode Format is invalid") String zipCode,
 				@NotBlank(message = "Confirm Password is required!") @Size(min = 6, max = 128, message = "Confirm Password must be between 8 and 128 characters") String confirm,
-				List<ThingToBeDonated> personWhoIsGoingToDonate) {
-		
+				List<ThingToBeDonated> thingToBeDonate) {
 			this.id = id;
 			this.userName = userName;
 			this.name = name;
@@ -133,6 +132,7 @@ import jakarta.validation.constraints.Size;
 			this.confirm = confirm;
 		}
 
+<<<<<<< HEAD
 //		public List<ThingToBeDonated> getPersonWhoIsGoingToDonate() {
 //			return personWhoIsGoingToDonate;
 //		}
@@ -141,14 +141,21 @@ import jakarta.validation.constraints.Size;
 //			this.personWhoIsGoingToDonate = personWhoIsGoingToDonate;
 //		}
 		
+=======
+>>>>>>> f2df6336e591af5d38a10d753bceddecfdbf581a
 		public List<ThingToBeDonated> getThingToBeDonate() {
 			return thingToBeDonate;
 		}
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> f2df6336e591af5d38a10d753bceddecfdbf581a
 		public void setThingToBeDonate(List<ThingToBeDonated> thingToBeDonate) {
 			this.thingToBeDonate = thingToBeDonate;
 		}
-
+		
+		
 		
 	}
+	
