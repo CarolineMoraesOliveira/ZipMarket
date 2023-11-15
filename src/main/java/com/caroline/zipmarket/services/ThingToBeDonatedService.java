@@ -18,7 +18,7 @@ public class ThingToBeDonatedService {
 	public List<ThingToBeDonated> allDonations(){
 		return thingToBeDonatedRepository.findAll();
 	}
-	
+
 	public ThingToBeDonated createDonation(ThingToBeDonated thingToBeDonate) {
 		return thingToBeDonatedRepository.save(thingToBeDonate);
 	}

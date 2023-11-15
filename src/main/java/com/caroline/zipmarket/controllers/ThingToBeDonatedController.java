@@ -1,7 +1,5 @@
 package com.caroline.zipmarket.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -26,7 +24,10 @@ import jakarta.validation.Valid;
 public class ThingToBeDonatedController {
 
 	@Autowired
-	ThingToBeDonatedService thingToBeDonatedService;
+	private ThingToBeDonatedService thingToBeDonatedService;
+	
+	@Autowired
+	private UserService userService;
 	
 
 	//route that serves the template
@@ -35,17 +36,7 @@ public class ThingToBeDonatedController {
 		return "create_donation.jsp";
 	}
 
-	//route that sends the information to the DataBase
-	@PostMapping("/create/donation")
-	public String CreateDonation(@Valid @ModelAttribute("item")ThingToBeDonated thingToBeDonate,BindingResult result, HttpSession session) {
-		if(result.hasErrors()) {
-		return "create_donation.jsp";
-		}
-		thingToBeDonatedService.createDonation(thingToBeDonate);
-		return "redirect:/dashboard";
 
-	@Autowired
-	private UserService userService;
 	
 //route that serves the form template
 @GetMapping("/donate")
@@ -58,15 +49,16 @@ public String Donate(@ModelAttribute("item")ThingToBeDonated thingToBeDonate) {
 public String CreateDonation(@Valid @ModelAttribute("item")ThingToBeDonated thingToBeDonate,BindingResult result, HttpSession session) {
 	if(result.hasErrors()) {
 		return "create_donation.jsp";
+
+    
 	}
 	Long id = (Long) session.getAttribute("userId");
 	User user = userService.findById(id);
 	thingToBeDonate.setPersonWhoIsGoingToDonate(user);
 	thingToBeDonatedService.createDonation(thingToBeDonate);
 	return "redirect:/dashboard";
-
-	
-		}
+}
+  
 
 //serves the view template
 @GetMapping("/view/{donationId}")
