@@ -59,6 +59,7 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <div> 
 		<c:forEach var="creator" items="${item }" >
@@ -69,6 +70,8 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 
 	
   
+=======
+>>>>>>> 1fbf8d453276e2377ed0e9ba075de9413777a137
 =======
 >>>>>>> 1fbf8d453276e2377ed0e9ba075de9413777a137
   <div class="bodypicture" style="padding-top: 1;">
