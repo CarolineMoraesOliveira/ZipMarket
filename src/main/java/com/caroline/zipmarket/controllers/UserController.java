@@ -91,16 +91,6 @@ public class UserController {
 		 List <User> allUsers = userService.findAll();
 		 model.addAttribute("users", allUsers); 
 
-		 	
-		 //render the items info
-//		 List<ThingToBeDonated> item = thingToBeDonatedService.allDonations();
-//		 for (ThingToBeDonated thing : item) {   
-//			    String base64Image = Base64.getEncoder().encodeToString(thing.getArticleImage());
-//			    thing.setBase64Image(base64Image); 
-//			}
-		
-				 
-				 
 
 		 List<ThingToBeDonated> item = thingToBeDonatedService.allDonations();
 
@@ -134,6 +124,9 @@ public class UserController {
 	        return "redirect:/dashboard";
 	        }
 
+	 
+	 // POS ROUTE TO UPDATE THE PAGE WITH THE IMAGES RELATED TO THE USER THAT LIVES ON THE SELECTED ZIPCODE
+
 	 } 
 	 
 	 
@@ -145,8 +138,7 @@ public class UserController {
 			return "redirect:/";
 		}
 	
-	 
-	 // POS ROUTE TO UPDATE THE PAGE WITH THE IMAGES RELATED TO THE USER THAT LIVES ON THE SELECTED ZIPCODE
+
 	 
 	 @PostMapping ("/{zipCode}/show")
 	 	public String processFormSelectedZipCode (@Valid @ModelAttribute("newUser") User newUser, 

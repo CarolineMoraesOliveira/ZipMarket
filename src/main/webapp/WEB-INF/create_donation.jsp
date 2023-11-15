@@ -48,6 +48,7 @@
             <form:input path="articleImage" class="form-control" type="file" accept="image/*"/>
             <form:errors path="articleImage" class="form-text text-warning"/>
         </div>
+
         <div class="text-end">
             <button type="submit" class="btn btn-success" style="    background: #56ab2f;  /* fallback for old browsers */
             background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */

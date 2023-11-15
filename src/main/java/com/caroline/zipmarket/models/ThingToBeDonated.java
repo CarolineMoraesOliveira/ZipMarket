@@ -4,6 +4,7 @@ import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.Base64;
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

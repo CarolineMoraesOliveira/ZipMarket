@@ -1,6 +1,5 @@
 package com.caroline.zipmarket.controllers;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -37,22 +36,29 @@ public class ThingToBeDonatedController {
 		return "create_donation.jsp";
 	}
 
+
 	
+//route that serves the form template
+@GetMapping("/donate")
+public String Donate(@ModelAttribute("item")ThingToBeDonated thingToBeDonate) {
+	return "create_donation.jsp";
+}
+
 //route that sends the information to the DataBase
 @PostMapping("/create/donation")
-public String createDonation(@Valid @ModelAttribute("item")ThingToBeDonated thingToBeDonate, 
-		BindingResult result, HttpSession session) {
+public String CreateDonation(@Valid @ModelAttribute("item")ThingToBeDonated thingToBeDonate,BindingResult result, HttpSession session) {
 	if(result.hasErrors()) {
 		return "create_donation.jsp";
+
+    
 	}
 	Long id = (Long) session.getAttribute("userId");
 	User user = userService.findById(id);
 	thingToBeDonate.setPersonWhoIsGoingToDonate(user);
 	thingToBeDonatedService.createDonation(thingToBeDonate);
 	return "redirect:/dashboard";
-
-	
-		}
+}
+  
 
 //serves the view template
 @GetMapping("/view/{donationId}")
@@ -94,7 +100,6 @@ public String delete(@PathVariable("id")Long id) {
 }
 
 //view user details
-//Carolina
 @GetMapping("/view/user/{id}")
 public String view_user_details(Model model, @PathVariable("id")Long id) { 
  	
