@@ -51,17 +51,6 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 		</form:select>
 	</form:form>
 </div>
-
-
-<div> 
-		<c:forEach var="creator" items="${item }" >
-	   <img src="data:image/jpeg;base64,${creator.getBase64Image()}" width="100" height="100">
-	<a href="/view/${creator.id}"><c:out value="${ creator.articleName}"></c:out></a>
-	</c:forEach>
-	</div>
-s
-	
-  
   <div class="bodypicture" style="padding-top: 1;">
 		<div class="containerpicture">
 			<div class="box">
