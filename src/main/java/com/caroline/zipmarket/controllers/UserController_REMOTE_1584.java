@@ -1,9 +1,5 @@
 package com.caroline.zipmarket.controllers;
 
-<<<<<<< HEAD
->>>>>>> 1fbf8d453276e2377ed0e9ba075de9413777a137
-=======
->>>>>>> 1fbf8d453276e2377ed0e9ba075de9413777a137
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.caroline.zipmarket.models.LoginUser;
-import com.caroline.zipmarket.models.ThingToBeDonated;
+
 import com.caroline.zipmarket.models.User;
-import com.caroline.zipmarket.services.ThingToBeDonatedService;
+
 import com.caroline.zipmarket.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
@@ -33,8 +29,7 @@ public class UserController {
 	private UserService userService;
 	
 	@Autowired
-	private ThingToBeDonatedService thingToBeDonatedService;
-	
+	//private ThingToBeDonatedService thingToBeDonatedService;
 	
 	
 //	LANDING PAGE WHERE EVERYTHING STARTS!!!
@@ -128,6 +123,8 @@ public class UserController {
 	        return "redirect:/dashboard";
 	        }
 
+
+	 }
 	 
 	 // POS ROUTE TO UPDATE THE PAGE WITH THE IMAGES RELATED TO THE USER THAT LIVES ON THE SELECTED ZIPCODE
 

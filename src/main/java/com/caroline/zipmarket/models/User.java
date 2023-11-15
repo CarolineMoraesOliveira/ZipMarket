@@ -133,25 +133,12 @@ import jakarta.validation.constraints.Size;
 			this.confirm = confirm;
 		}
 
-<<<<<<< HEAD
-//		public List<ThingToBeDonated> getPersonWhoIsGoingToDonate() {
-//			return personWhoIsGoingToDonate;
-//		}
-//
-//		public void setPersonWhoIsGoingToDonate(List<ThingToBeDonated> personWhoIsGoingToDonate) {
-//			this.personWhoIsGoingToDonate = personWhoIsGoingToDonate;
-//		}
-		
-=======
->>>>>>> f2df6336e591af5d38a10d753bceddecfdbf581a
+
 		public List<ThingToBeDonated> getThingToBeDonate() {
 			return thingToBeDonate;
 		}
 
-<<<<<<< HEAD
-	
-=======
->>>>>>> f2df6336e591af5d38a10d753bceddecfdbf581a
+
 		public void setThingToBeDonate(List<ThingToBeDonated> thingToBeDonate) {
 			this.thingToBeDonate = thingToBeDonate;
 		}
