@@ -32,17 +32,17 @@ public class ThingToBeDonatedController {
 
 	//route that serves the template
 	@GetMapping("/donate")
-	public String Donate(@ModelAttribute("item")ThingToBeDonated thingToBeDonate) {
+	public String Donate1(@ModelAttribute("item")ThingToBeDonated thingToBeDonate) {
 		return "create_donation.jsp";
 	}
 
 
 	
 //route that serves the form template
-@GetMapping("/donate")
-public String Donate(@ModelAttribute("item")ThingToBeDonated thingToBeDonate) {
-	return "create_donation.jsp";
-}
+//@GetMapping("/donate")
+//public String Donate(@ModelAttribute("item")ThingToBeDonated thingToBeDonate) {
+//	return "create_donation.jsp";
+//}
 
 //route that sends the information to the DataBase
 @PostMapping("/create/donation")
@@ -114,3 +114,8 @@ public String view_user_details(Model model, @PathVariable("id")Long id) {
 
 }
 }
+
+
+
+
+

@@ -27,7 +27,7 @@
         <h1 class="display-3 p-2  text-white ">Welcome to the ZipMarket "${newUser.userName}"</h1>
     </div>
     <div  id="container2" style="">
-        <a href="/Logout"><button><span>Logout</span></button></a>
+        <a href="/logout"><button><span>Logout</span></button></a>
     </div>
 </div>
 
