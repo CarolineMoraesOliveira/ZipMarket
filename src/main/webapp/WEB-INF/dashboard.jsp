@@ -49,7 +49,7 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 				</form:option>
 			</c:forEach>
 		</form:select>
-    <h1>Related articles based on the ZipCode</h1>
+
     <c:forEach var="creator" items="${usersByZipCode}" >
         <p>Article Name: <c:out value="${creator.thingToBeDonate.articleName}"/></p>
         <p>Article Image:</p>
@@ -74,47 +74,45 @@ border: 3px solid #eee;"  href="/donate" role="button">Create Your Donation</a>
 		<div class="containerpicture">
 			<div class="box">
 				<div class="imgBx">
-					<img src="/images/img1.jpg">
+					<img src="/images/phone.jpg">
 				</div>
 				<div class="content">
 					<div>
-						<h2>Image Title</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="/view/3" class="text-white">Old Phone</a>
+						<p>This phone will never brake!</p>
 					</div>
 				</div>
 			</div>
 			<div class="box">
 				<div class="imgBx">
-					<img src="/images/img2.jpg">
+					<img src="/images/yeezy.webp">
 				</div>
 				<div class="content">
 					<div>
-						<h2>Image Title</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="/view/2" class="text-white">Yeezy Foam</a>
+						<p>They are just ugly as sh&%</p>
 					</div>
 				</div>
 			</div>
 			<div class="box">
 				<div class="imgBx">
-					<img src="/images/img3.jpg">
+					<img src="/images/Pochita.jpg">
 				</div>
 				<div class="content">
 					<div>
-						<a href="#">CHICA COOL</a>
+						<a href="/view/1" class="text-white">POCHITA</a>
+						<p>  Devil dog with a chainsaw instead of a nose, very powerful and loyal</p>
 					</div>
 				</div>
 			</div>
 			<div class="box">
 				<div class="imgBx">
-					<img src="/images/img4.jpg">
+					<img src="/images/PC.jpg">
 				</div>
 				<div class="content">
 					<div>
-						<h2>Image Title</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua.</p>
+						<a href="/view/4" class="text-white">Brand New iMac</a>
+						<p>  Just used once !!</p>
 					</div>
 				</div>
 			</div>

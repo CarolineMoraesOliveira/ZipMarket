@@ -81,6 +81,7 @@ public class UserController {
 	 	
 		 Long userId = (Long) session.getAttribute("userId"); 
 		 
+		 
 		 if (userId == null) {
 
 			 return "redirect:/";
